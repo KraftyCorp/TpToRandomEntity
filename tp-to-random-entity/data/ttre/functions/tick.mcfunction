@@ -1,13 +1,13 @@
 scoreboard objectives add ticks dummy
 scoreboard objectives add secondes dummy
 scoreboard objectives setdisplay sidebar ticks
-scoreboard objectives modify ticks displayname "1/20 de secondes écoulés (1200 = 1m)"
+scoreboard objectives modify ticks displayname "Secondes écoulées, téléportation toutes les 2m"
 
 execute as @a run scoreboard players add @s ticks 1
 execute as @a if score @s ticks matches 20 run scoreboard players add @s secondes 1
-execute as @a[tag=!tp_spawn_after] if score @s ticks matches 60 run tag @s add tp
-execute as @a[tag=tp_spawn_after] if score @s ticks matches 3600 run tag @s add tp
-execute as @a[tag=tp_spawn_after] if score @s ticks matches 3600 run tag @s remove tp_spawn_after
+execute as @a[tag=!tp_spawn_after] if score @s secondes matches 60 run tag @s add tp
+execute as @a[tag=tp_spawn_after] if score @s secondes matches 180 run tag @s add tp
+execute as @a[tag=tp_spawn_after] if score @s secondes matches 180 run tag @s remove tp_spawn_after
 execute as @a[tag=tp] run scoreboard players set @s ticks 0
 execute as @a[tag=tp,tag=!tp_spawn] run tp @s @e[limit=1,sort=random]
 execute as @a[tag=tp,tag=tp_spawn] run tp @s @e[limit=1,tag=SpawnPoint,sort=random]
