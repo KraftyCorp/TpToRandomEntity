@@ -1,0 +1,1 @@
+tellraw @a [{"text":"Bienvenue dans une survie Minecraft un peu spéciale !","color":"gold","bold":true},{"text":"Krafty303","color":"blue","bold":"true"},{"text":" !","color":"gold","bold":true},{"text":"\n","color":"white","bold":false}]
